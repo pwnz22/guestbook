@@ -1,0 +1,22 @@
+{% include 'header.html' %}
+    <div class="main_wrap">
+        {% if (getmessages) %}
+        <div class="activate_messages">
+            <span class="glyphicon glyphicon-floppy-saved"></span>
+            <span class="glyphicon glyphicon-trash"></span>
+        </div>
+        {% else %}
+        <h2 class="messages_activated">Сообщений для активации нет!</h2>
+        {% endif %}
+        {% for message in getmessages %}
+        <div class="panel panel-warning">
+            <div class="panel-heading clearfix">
+                <h4 class="panel-title-name">{{ message.name }}</h4>
+                <h4 class="panel-title-date">{{ message.add_date }}</h4>
+            </div>
+            <div class="panel-body">{{ message.message }} <a href="?active={{ message.id }}"><span class="glyphicon glyphicon-ok" title="активировать"></span></a><a href="?delete={{ message.id }}"><span
+                    class="glyphicon glyphicon-remove" title="удалить"></span></a></div>
+        </div>
+        {% endfor %}
+    </div>
+{% include 'footer.html' %}

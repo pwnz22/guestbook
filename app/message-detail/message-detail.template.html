@@ -1,0 +1,33 @@
+<img ng-src="{{$ctrl.message.images[0]}}" class="phone" />
+
+<h1>{{$ctrl.message.name}}</h1>
+
+<p>{{$ctrl.message.message}}</p>
+
+<ul class="phone-thumbs">
+    <li ng-repeat="img in $ctrl.message.images">
+        <img ng-src="{{img}}" />
+    </li>
+</ul>
+
+<ul class="specs">
+    <li>
+        <span>Отзывы</span>
+        <dl>
+            <!--<dd ng-repeat="message in $ctrl.messages">-->
+                <!--<p>{{message.add_date}}</p>-->
+                <!--<p>{{message.message}}</p>-->
+                <!--<p>{{message.email}}</p>-->
+            <!--</dd>-->
+            <dd>
+                <p>{{$ctrl.messages.active | status}}</p>
+                <p>{{$ctrl.messages.name}}</p>
+                <p>{{$ctrl.messages.add_date}}</p>
+                <p>{{$ctrl.messages.email}}</p>
+                <p>{{$ctrl.messages.message}}</p>
+            </dd>
+
+        </dl>
+    </li>
+
+</ul>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="messagecatApp">
+<head>
+    <meta charset="UTF-8">
+    <title>My first app in AngularJS</title>
+    <link rel="stylesheet" href="app/css/superhero/bootstrap.min.css">
+
+    <script src="app/bower_components/angular/angular.js"></script>
+    <script src="app/bower_components/angular-route/angular-route.js"></script>
+    <script src="app/js/app.module.js"></script>
+    <script src="app/js/app.config.js"></script>
+
+    <script src="app/messages-list/messages-list.module.js"></script>
+    <script src="app/messages-list/messages-list.component.js"></script>
+
+    <script src="app/message-detail/message-detail.module.js"></script>
+    <script src="app/message-detail/message-detail.component.js"></script>
+
+    <script src="app/core/core.module.js"></script>
+    <script src="app/core/status/status.filter.js"></script>
+</head>
+<body>
+
+    <div ng-view></div>
+
+
+</body>
+</html>

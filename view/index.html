@@ -1,0 +1,48 @@
+{% include 'header.html' %}
+
+
+    {% for message in getmessages %}
+        <div class="panel panel-warning">
+
+            <div class="panel-heading clearfix">
+                <h4 class="panel-title-name">{{ message.name }}</h4>
+                <h4 class="panel-title-date">{{ message.add_date }}</h4>
+            </div>
+            <div class="panel-body">{{ message.message }} <a href="?delete={{ message.id }}"><span class="glyphicon glyphicon-remove" title="удалить"></span></a></div>
+
+        </div>
+    {% endfor %}
+
+    <!-- Slider -->
+    <div class="reviews_slider">
+        {% for message in getmessages %}
+            <div class="slider_item">
+                <div class="slider_item_avatar">
+                    <img src="/assets/avatar/{{ message.avatar }}" alt="avatar">
+                </div>
+                <div class="slider_item_name">{{ message.name }}</div>
+                <div class="slider_item_message">{{ message.message }}</div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Send messages form -->
+    <div class="row">
+        <div class="col-md-push-4 col-md-4">
+            <div class="feedback-message">
+                <h1>Написать нам</h1>
+                <form action="?" method="post" enctype="multipart/form-data">
+                    <input type="text" name="name" placeholder="Имя"/>
+                    <input type="email" name="email" placeholder="Почта"/>
+                    <textarea name="message" class="message-text" placeholder="Напишите нам сообщение"></textarea>
+                    <label>Выберите аватарку: <input type="file" name="avatar"></label>
+                    <input type="submit" class="send_message" value="Отправить"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+{% include 'footer.html' %}
